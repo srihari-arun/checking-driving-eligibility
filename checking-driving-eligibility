@@ -1,0 +1,36 @@
+while True:
+    try: 
+        age = int(input("Enter candidate's age: "))
+        if age > 120 or age <0:
+            print("INVALID INPUT. Please provide valid input")
+            print(" ")
+            continue 
+        elif age < 18:
+            print("The candidate is not eligible to drive")
+        elif age > 85:
+            print("The candidate is not eligible to drive due to old age. Please consult the driving officer.")
+        else:
+            has_license = input("Does the candidate have a driving license or permit? ").upper()
+            valid_yes = {"YES", "Y", "TRUE", "T"}
+            valid_no = {"NO", "N", "F", "FALSE"}
+            if has_license in valid_yes:
+                print("The candidate is eligible to drive")
+            elif has_license in valid_no:
+                print("The candidate is not eligible to drive")
+            else:
+                print("INVALID INPUT. Please provide valid input")
+    except ValueError: 
+            print("INVALID INPUT. Please provide valid input")
+    go_to_starting = input("Would you like to go to the starting again? ").upper()
+    valid_yes1 = {"YES", "Y", "TRUE", "T"}
+    valid_no1 = {"NO", "N", "FALSE", "F"}
+    if go_to_starting in valid_yes1:
+        print(" ")
+    if go_to_starting in valid_no1:
+        break
+
+
+
+
+
+

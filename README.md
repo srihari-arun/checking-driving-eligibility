@@ -6,8 +6,14 @@ Python
 IDE used - PyCharm
 
 # Concept used
-* Receive user input - using the input function, we receive their age and license status.
-* Conditions - If either of the inputs or both inputs is not under the driving rules, the message that the candidate is not                   eligible to drive.
-* Starting message - After the message, the program asks the user if you would like to go to starting again. If yes, then the                       input question is asked with the use of the while-loop. If no, the code breaks and the process is                              finished with exit code 0.
+### Receive user input:
+The program uses the input function to obtain the user’s age and driving license status for evaluation.
+### Country filter:
+Different countries have different legal driving age requirements, so the minimum age for driving eligibility is dynamically determined based on the user’s selected country.  
+### Conditions
+If either input or both inputs do not satisfy the driving eligibility rules, the program displays a message stating that the candidate is not eligible to drive.
+### Starting message
+After displaying the result, the program prompts the user to restart the process. If the user responds yes, the while loop continues, and the input sequence is repeated. If the user responds no, the loop breaks and the program terminates gracefully with exit code 0.
+
 
 

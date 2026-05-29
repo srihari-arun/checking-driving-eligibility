@@ -1,3 +1,4 @@
+```
 while True:
     try:
         country = input("Enter country (India/US/UK): ").lower()
@@ -38,3 +39,4 @@ while True:
 
     if go_to_starting in valid_no1:
         break
+```

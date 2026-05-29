@@ -1,36 +1,40 @@
 while True:
-    try: 
+    try:
+        country = input("Enter country (India/US/UK): ").lower()
+        rules = {"india": 18, "us": 16, "uk": 17}
+        min_age = rules[country]
+        if country not in ["india", "us", "uk"]:
+            print("Country not supported. Please choose country from the options only.")
+            print(" ")
+            continue
         age = int(input("Enter candidate's age: "))
-        if age > 120 or age <0:
+        if age > 120 or age < 0:
             print("INVALID INPUT. Please provide valid input")
             print(" ")
-            continue 
-        elif age < 18:
-            print("The candidate is not eligible to drive")
+            continue
         elif age > 85:
-            print("The candidate is not eligible to drive due to old age. Please consult the driving officer.")
+            print("The candidate is not eligible to drive due to old age. Pass for old age driving test to renew driving license.")
+        elif age < min_age:
+            print("The candidate is too young and thus not eligible to drive")
         else:
             has_license = input("Does the candidate have a driving license or permit? ").upper()
             valid_yes = {"YES", "Y", "TRUE", "T"}
             valid_no = {"NO", "N", "F", "FALSE"}
+
             if has_license in valid_yes:
-                print("The candidate is eligible to drive")
+                print("The candidate is eligible to drive in", country.upper())
             elif has_license in valid_no:
-                print("The candidate is not eligible to drive")
+                print("The candidate is not eligible to drive in", country.upper())
             else:
                 print("INVALID INPUT. Please provide valid input")
-    except ValueError: 
-            print("INVALID INPUT. Please provide valid input")
+
+    except ValueError:
+        print("INVALID INPUT. Please provide valid input")
+
     go_to_starting = input("Would you like to go to the starting again? ").upper()
+
     valid_yes1 = {"YES", "Y", "TRUE", "T"}
     valid_no1 = {"NO", "N", "FALSE", "F"}
-    if go_to_starting in valid_yes1:
-        print(" ")
+
     if go_to_starting in valid_no1:
         break
-
-
-
-
-
-
